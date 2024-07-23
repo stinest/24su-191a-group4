@@ -1,0 +1,102 @@
+* {
+    font-family: 'Roboto Serif', serif;
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html {
+    background-color: #d38ba2;
+}
+
+html, body {
+    height: 80vh; 
+    padding: 1rem; 
+    box-sizing: border-box;
+}
+
+body {
+    display: grid; 
+    grid-template-areas: 
+        "header"
+        "main"
+        "buttonmap"
+        "footer"; 
+    grid-template-rows: auto 1fr auto; 
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        "portfolio map"; 
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem; 
+}
+
+header { 
+    grid-area: header;
+}
+
+main { 
+    grid-area: main;
+}
+
+.portfolio {
+    grid-area: portfolio;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#map { 
+    grid-area: map;
+    height: 80vh;
+}
+
+#buttonmap {
+    grid-area: buttonmap;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#buttonmap button {
+    color: #d87093;
+    border: dashed #6b4885;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 13px;
+}
+
+#footer {
+    grid-area: footer;
+    padding: 5px; 
+    background-color: #f4e2e8;
+    color: #333;
+    text-align: center;
+}
+
+/* typography */
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: medium;
+}
+
+h3 {
+    font-size: 0.8rem;
+    font-weight: normal;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: light;
+}
