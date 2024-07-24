@@ -14,13 +14,7 @@ function addMarker1(data){
     let lat = data['lat1'];
     popup_message = `<h2>Protest Site</h2> <h3>Location: ${data['Could you best specify the location where you were present?']}</h3>`
 
-    var signIcon = document.createElement('div');
-    signIcon.classList.add("sign")
-
-    new maplibregl.Marker(signIcon, {
-        anchor: 'bottom',
-        offset: [0, 6]
-    })
+    new maplibregl.Marker()
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))

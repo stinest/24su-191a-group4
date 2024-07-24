@@ -101,10 +101,7 @@ p {
     font-weight: light;
 }
 
-.sign {
-    height: 69px;
-    width: 69px;
-    background-image: url(protest-sign-icon.png);
-    background-size: contain;
-    cursor: pointer;
+li {
+    display: inline-block;
+    margin-right: 20px;
 }
