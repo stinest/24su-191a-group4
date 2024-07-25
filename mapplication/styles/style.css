@@ -5,10 +5,6 @@
     box-sizing: border-box; 
 }
 
-html {
-    background-color: #ead9b1;
-}
-
 html, body {
     height: 80vh; 
     padding: 1rem; 
@@ -23,6 +19,8 @@ body {
         "buttonmap"
         "footer"; 
     grid-template-rows: auto 1fr auto; 
+    background-image: linear-gradient(#e2a18a, #ead9b1, #7a9a5cbb);
+    background-attachment: fixed;
 }
 
 main {
