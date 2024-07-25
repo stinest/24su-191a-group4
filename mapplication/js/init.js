@@ -13,12 +13,8 @@ function addMarker1(data){
     let lng = data['lng1'];
     let lat = data['lat1'];
     popup_message = `<h2>Protest Site</h2> <h3>Location: ${data['Could you best specify the location where you were present?']}</h3>`
-   
-    let signIcon = document.createElement('div');
-    signIcon.className = 'marker';
-    signIcon.style.backgroundImage = "url('protest-sign-icon.png')";
 
-    new maplibregl.Marker({element: signIcon})
+    new maplibregl.Marker({ element: createImage('signIcon') })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -32,11 +28,7 @@ function addMarker2(data){
     let lat = data['lat2'];
     popup_message = `<h2>Encampment Site</h2> <h3>Location: ${data['If involved at any encampments related to the Pro-Palestine movement, could you best specify the location where you were present?']}</h3>`
  
-    let tentIcon = document.createElement('div');
-    tentIcon.className = 'marker';
-    tentIcon.style.backgroundImage = "url('tent-icon.png')" //trying to add custom icons :(
-//right now icon image not showing up but button is there, popup not showing up too
-    new maplibregl.Marker({element: tentIcon})
+    new maplibregl.Marker({ element: createImage('tentIcon') })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -50,7 +42,7 @@ function addMarker3(data){
     let lat = data['lat3'];
     popup_message = `<h2>Significant Landmark</h2> <h3>Location: ${data["Can you describe any specific location on UCLA's campus that have become significant in the context of Pro-Palestine movements?"]}</h3>`
 
-    new maplibregl.Marker()
+    new maplibregl.Marker({ element: createImage('flagIcon') })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -59,11 +51,10 @@ function addMarker3(data){
 }
 
 function createButtons(markerNum, lat,lng,title){
-    const buttonId = "button" + title.replace(/\s+/g, '_'); // Replace spaces with underscores
+    const buttonId = "button" + title.replace(/\s+/g, '_'); 
     const existingButton = document.getElementById(buttonId);
     if (existingButton) {
-        console.log("Button with this title already exists:", title); // For debugging
-        return; // Exit the function if the button already exists
+        return; // for no duplicate buttons
     }
 
     const newButton = document.createElement("button");
@@ -77,8 +68,31 @@ function createButtons(markerNum, lat,lng,title){
         });
     });
 
-    // Append the new button to the 'contents' element
+    // appends to corresponding buttonmap
     document.getElementById("buttonmap").appendChild(newButton);
+    //document.getElementById("encampmentbuttons").appendChild(newButton);
+    //document.getElementById("protestbuttons").appendChild(newButton);
+    //document.getElementById("significantbuttons").appendChild(newButton);
+}
+
+function createImage(img) {
+    const imgURL = `js/${img}.png`;
+    const marker = document.createElement('div');
+    marker.style.backgroundImage = `url(${imgURL})`;         // custom markers for map
+    marker.style.backgroundSize = 'cover';
+    marker.style.width = '50px';
+    marker.style.height = '50px';
+
+    marker.addEventListener('mouseenter', function() {
+        marker.style.width = '70px';
+        marker.style.height = '70px';
+    });
+    marker.addEventListener('mouseleave', function() {
+        marker.style.width = '50px';
+        marker.style.height = '50px';
+    });
+
+    return marker;
 }
 
 const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQPNJwVJXo0yXNrpejSqaLoJmkjabEdnKbI47-VEL-WX7FUofONme430LdJLNV9ZTTPftO1_HNXJJdt/pub?output=csv"

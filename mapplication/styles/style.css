@@ -6,7 +6,7 @@
 }
 
 html {
-    background-color: #d38ba2;
+    background-color: #ead9b1;
 }
 
 html, body {
@@ -28,13 +28,14 @@ body {
 main {
     display: grid;
     grid-template-areas:
-        "portfolio map"; 
-    grid-template-columns: 1fr 1fr;
+        "map portfolio"; 
+    grid-template-columns: 1fr 0.7fr;
     padding: 1rem; 
 }
 
 header { 
     grid-area: header;
+    padding: 1rem;
 }
 
 main { 
@@ -74,9 +75,33 @@ main {
 #footer {
     grid-area: footer;
     padding: 5px; 
-    background-color: #f4e2e8;
+    background-color: #7a9a5c;
     color: #333;
     text-align: center;
+}
+
+/* navigation */
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #333;
+    background-color: #7a9a5c;
+    color: #fff;
+}
+
+.nav a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
 }
 
 /* typography */
