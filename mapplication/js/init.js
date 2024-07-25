@@ -13,8 +13,12 @@ function addMarker1(data){
     let lng = data['lng1'];
     let lat = data['lat1'];
     popup_message = `<h2>Protest Site</h2> <h3>Location: ${data['Could you best specify the location where you were present?']}</h3>`
+   
+    let signIcon = document.createElement('div');
+    signIcon.className = 'marker';
+    signIcon.style.backgroundImage = "url('protest-sign-icon.png')";
 
-    new maplibregl.Marker()
+    new maplibregl.Marker({element: signIcon})
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -27,8 +31,12 @@ function addMarker2(data){
     let lng = data['lng2'];
     let lat = data['lat2'];
     popup_message = `<h2>Encampment Site</h2> <h3>Location: ${data['If involved at any encampments related to the Pro-Palestine movement, could you best specify the location where you were present?']}</h3>`
-
-    new maplibregl.Marker()
+ 
+    let tentIcon = document.createElement('div');
+    tentIcon.className = 'marker';
+    tentIcon.style.backgroundImage = "url('tent-icon.png')" //trying to add custom icons :(
+//right now icon image not showing up but button is there, popup not showing up too
+    new maplibregl.Marker({element: tentIcon})
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
