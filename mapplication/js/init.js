@@ -14,7 +14,7 @@ function addMarker1(data){
     let lat = data['lat1'];
     popup_message = `<h2>Protest Site</h2> <h3>Location: ${data['Could you best specify the location where you were present?']}</h3>`
 
-    new maplibregl.Marker({ element: createImage('signIcon') })
+    new maplibregl.Marker({anchor: 'bottom', element: createImage('signIcon') })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -28,7 +28,7 @@ function addMarker2(data){
     let lat = data['lat2'];
     popup_message = `<h2>Encampment Site</h2> <h3>Location: ${data['If involved at any encampments related to the Pro-Palestine movement, could you best specify the location where you were present?']}</h3>`
  
-    new maplibregl.Marker({ element: createImage('tentIcon') })
+    new maplibregl.Marker({anchor: 'right', element: createImage('tentIcon') })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -42,7 +42,7 @@ function addMarker3(data){
     let lat = data['lat3'];
     popup_message = `<h2>Significant Landmark</h2> <h3>Location: ${data["Can you describe any specific location on UCLA's campus that have become significant in the context of Pro-Palestine movements?"]}</h3>`
 
-    new maplibregl.Marker({ element: createImage('flagIcon') })
+    new maplibregl.Marker({anchor: 'left', element: createImage('flagIcon') })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
@@ -65,7 +65,9 @@ function createButtons(markerNum, lat,lng,title){
     newButton.addEventListener('click', function() {
         map.flyTo({
             center: [lng, lat],
+            zoom: 20
         });
+
     });
 
     // appends to corresponding buttonmap
@@ -126,3 +128,25 @@ function processData(results){
         }
     });
 };
+
+var protestbtn = document.getElementById("protestbtn");
+var encampmentbtn = document.getElementById("encampmentbtn");
+var siglandmarkbtn = document.getElementById("siglandmarkbtn");
+var divP = document.getElementById("divP");
+var divE = document.getElementById("divE");
+var divS = document.getElementById("divS");
+protestbtn.addEventListener('click', ()=>{
+    divP.style.display='block';
+    divE.style.display='none';
+    divS.style.display='none';
+});
+encampmentbtn.addEventListener('click', ()=>{
+    divP.style.display='none';
+    divE.style.display='block';
+    divS.style.display='none';
+});
+siglandmarkbtn.addEventListener('click', ()=>{
+    divP.style.display='none';
+    divE.style.display='none';
+    divS.style.display='block';
+});

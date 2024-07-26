@@ -42,7 +42,7 @@ main {
 
 .portfolio {
     grid-area: portfolio;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -131,4 +131,38 @@ li {
 
 #gallery {
     display: block;
+}
+
+#surveyButton {
+    background-color: transparent;
+    border-color: transparent;
+    color: #fff;
+    font-size: 12pt;
+}
+
+.blocks{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.divP {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #d87093;
+}
+
+.divE {
+    display: none;
+    width: 100%;
+    height: auto;
+    background: #fff;
+}
+
+.divS {
+    display: none;
+    width: 100%;
+    height: auto;
+    background: #7a9a5c;
 }
