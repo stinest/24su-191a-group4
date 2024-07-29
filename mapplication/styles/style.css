@@ -27,13 +27,25 @@ main {
     display: grid;
     grid-template-areas:
         "map portfolio"; 
-    grid-template-columns: 1fr 0.7fr;
+    grid-template-columns: 1fr 0.6fr;
     padding: 1rem;
 }
 
 header { 
     grid-area: header;
     padding: 1rem;
+}
+
+.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; 
+}
+
+.headers img {
+    width: 150px; 
+    height: auto;
 }
 
 main { 
@@ -133,8 +145,20 @@ main {
 /* responses */
 
 #responses {
-    background-color: #ead9b1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     padding: 1rem;
+}
+
+.response-card {
+    background-color: #f1e1bb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    
+    box-sizing: border-box;
 }
 
 /* navigation */
