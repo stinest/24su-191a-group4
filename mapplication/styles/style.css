@@ -19,7 +19,7 @@ body {
         "buttonmap"
         "footer"; 
     grid-template-rows: auto 1fr auto; 
-    background-image: linear-gradient(#e2a18a, #ead9b1, #7a9a5cbb);
+    background-image: linear-gradient(#e2a18a, #ead9b1, #7a9a5c);
     background-attachment: fixed;
 }
 
@@ -28,7 +28,7 @@ main {
     grid-template-areas:
         "map portfolio"; 
     grid-template-columns: 1fr 0.7fr;
-    padding: 1rem; 
+    padding: 1rem;
 }
 
 header { 
@@ -46,28 +46,13 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #d0dcc6;
 }
 
 #map { 
+    position: relative;
     grid-area: map;
-    height: 80vh;
-}
-
-#buttonmap {
-    grid-area: buttonmap;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-#buttonmap button {
-    color: #d87093;
-    border: dashed #6b4885;
-    border-radius: 5px;
-    padding: 6px;
-    font-size: 13px;
+    height: 60vh;
 }
 
 #footer {
@@ -76,6 +61,74 @@ main {
     background-color: #7a9a5c;
     color: #333;
     text-align: center;
+}
+
+/* buttons */
+
+.buttons {
+    text-align: center;
+    padding: 20px;
+}
+
+.buttons h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.buttons button {
+    color: #c37a60;
+    border: 4px outset #fff;
+    background-color: #e1e8da;
+    padding: 6px;
+    font-size: 13px;
+}
+
+.buttons button:hover {
+    background-color: #99b87c;
+    color: #fff;
+}
+
+#encampmentbuttons, #protestbuttons, #significantbuttons {
+    border: 2px dashed #333;
+    padding: 5px;
+    margin: 15px 0;
+}
+
+/* legend */
+
+#legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 200px;
+    font-family: 'Roboto Serif', sans-serif;
+    z-index: 1;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+}
+
+.legend-item img {
+    margin-right: 10px;
+}
+
+/* filters */
+
+.filters {
+    text-align: center;
+    padding: 20px;
+}
+
+.filters label {
+    display: block;
+    margin: 10px 0;
 }
 
 /* navigation */
@@ -107,6 +160,8 @@ main {
 h1 {
     font-size: 2rem;
     font-weight: bold;
+    text-shadow: 2px 3px #fff;
+    color: #333;
 }
 
 h2 {
@@ -127,8 +182,4 @@ p {
 li {
     display: inline-block;
     margin-right: 20px;
-}
-
-#gallery {
-    display: block;
 }
