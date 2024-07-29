@@ -144,6 +144,7 @@ function processData(results){
             if (feature['lat1'] != "0") addMarker1(feature);
             if (feature['lat2'] != "0") addMarker2(feature);
             if (feature['lat3'] != "0") addMarker3(feature);
+            makeResponseCards(feature);
         }
     });
     toggleMarkersVisibility();
@@ -163,3 +164,40 @@ function toggleMarkersVisibility() {
 document.getElementById('showEncampment').addEventListener('change', toggleMarkersVisibility);
 document.getElementById('showProtest').addEventListener('change', toggleMarkersVisibility);
 document.getElementById('showSignificant').addEventListener('change', toggleMarkersVisibility);
+
+/* responses to-do
+
+function makeResponseCards(data) {
+    let timestamp = data['Timestamp'];
+    let date = new Date(timestamp);
+    let monthYear = `${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`;
+
+    let card = document.createElement('div');
+    card.className = 'card';
+
+
+    if data['Timestamp'] contains 08/2024
+        let title = Response from data['How are you/have been affiliated with UCLA?'] (August 2024, data[Where are you currently located?])
+    if data[How have you supported the Palestinian resistance?] != ""
+        let q1 = How have you supported the Palestinian resistance?
+        let a1 = data[How have you supported the Palestinian resistance?]
+    if data[If involved at any encampments related to the Pro-Palestine movement, could you share your experience?] != ""
+        let q2 = If involved at any encampments related to the Pro-Palestine movement, could you share your experience?
+        let a2= data[If involved at any encampments related to the Pro-Palestine movement, could you share your experience?]
+    if data[Is there anything else you would like to share in regards to your experience advocating for Palestine?] != ""
+        let q3 = Is there anything else you would like to share in regards to your experience advocating for Palestine?
+        let a3 = data[Is there anything else you would like to share in regards to your experience advocating for Palestine?]
+    if data[Has showing solidarity with Palestine impacted you in any way?] != ""
+        let q4 = Has showing solidarity with Palestine impacted you in any way?
+        let a4 = data[Has showing solidarity with Palestine impacted you in any way?]
+    if data[How have recent events affected your perception of UCLA's campus spaces?] != ""
+        let q5 = How have recent events affected your perception of UCLA's campus spaces?
+        let a5 = data[How have recent events affected your perception of UCLA's campus spaces?]
+    if data[How have UCLA's administrative responses to Pro-Palestine activism affected your use of campus spaces?]
+        let q6 = How have UCLA's administrative responses to Pro-Palestine activism affected your use of campus spaces?
+        let a6 = data[How have UCLA's administrative responses to Pro-Palestine activism affected your use of campus spaces?]
+    if data[Is there anything else you would like to share?]
+        let q7 = Is there anything else you would like to share?
+        let a7 = data[Is there anything else you would like to share?]
+}
+*/

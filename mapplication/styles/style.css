@@ -16,7 +16,7 @@ body {
     grid-template-areas: 
         "header"
         "main"
-        "buttonmap"
+        "responses"
         "footer"; 
     grid-template-rows: auto 1fr auto; 
     background-image: linear-gradient(#e2a18a, #ead9b1, #7a9a5c);
@@ -42,11 +42,10 @@ main {
 
 .portfolio {
     grid-area: portfolio;
-    display: block;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #d0dcc6;
 }
 
 #map { 
@@ -129,6 +128,13 @@ main {
 .filters label {
     display: block;
     margin: 10px 0;
+}
+
+/* responses */
+
+#responses {
+    background-color: #ead9b1;
+    padding: 1rem;
 }
 
 /* navigation */
