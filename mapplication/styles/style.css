@@ -42,7 +42,7 @@ main {
 
 .portfolio {
     grid-area: portfolio;
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     align-items: center;

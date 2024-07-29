@@ -88,7 +88,9 @@ function createButtons(markerNum, lat,lng,title){
     newButton.addEventListener('click', function() {
         map.flyTo({
             center: [lng, lat],
+            zoom: 20
         });
+
     });
 
     // appends to corresponding buttonmap
