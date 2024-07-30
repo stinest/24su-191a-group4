@@ -19,7 +19,7 @@ Specifically at UCLA, students, faculty, and community members have faced repres
 We want to provide a safe space for the UCLA community, involving everyone who has been affected by the recent Pro-Palestine movements on campus. By creating a place where the direct voices of the people that have faced academic and political repression will be heard, we hope to consolidate the thoughts and feelings of the Pro-Palestine movement outside the algorithms and ocean of social media. 
 
 ## What Technology Was Used?
-Our mapplication is a web-based tool created to collect and visualize user-submitted experiences related to the Pro-Palestine movement at UCLA. Developed using HTML/CSS and JavaScript, the site also serves as a comprehensive resource hub that provides related news and events, in addition to being a platform for submitting responses.
+Our mapplication is a web-based tool created to collect and visualize user-submitted experiences related to the Pro-Palestine movement at UCLA. Developed using HTML/CSS and JavaScript, the site also serves as an image gallery with photos taken during the movement, in addition to being a platform for submitting responses.
 
 Data is submitted through an online Google Form embedded in the mapplication and provides detailed (and secure) information about their involvement and experience. Using MapLibre, we visualize these submissions on an interactive map which allows visitors to see the geographic distribution of activities and significant locations related to the Pro-Palestine movement. The data is frequently updated to reflect changes and updates and provides an accurately evolving view of the movement's impact.
 
