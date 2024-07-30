@@ -27,6 +27,18 @@ header {
     padding: 1rem;
 }
 
+.headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; 
+}
+
+.headers img {
+    width: 150px; 
+    height: auto;
+}
+
 main { 
     grid-area: main;
 }

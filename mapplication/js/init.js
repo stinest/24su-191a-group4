@@ -173,8 +173,8 @@ function makeResponseCards(data) {
     let responseCard = document.createElement('div');
     responseCard.className = 'response-card';
 
-    let title = `Response from ${data['How are you/have been affiliated with UCLA?']} (${monthYear}, ${data['Where are you currently located?']})`;
-    let titleElement = document.createElement('h3');
+    let title = `Survey Response from ${data['How are you/have been affiliated with UCLA?']} (${monthYear}, ${data['Where are you currently located?']})`;
+    let titleElement = document.createElement('h5');
     titleElement.textContent = title;
     responseCard.appendChild(titleElement);
 
@@ -259,3 +259,19 @@ function makeResponseCards(data) {
     if (hasContent) {
         document.getElementById('responses').appendChild(responseCard); }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+
+    var closebutton = document.getElementById("close-btn");
+
+    closebutton.onclick = function() {
+        popup.style.display = "none"; }
+
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = "none";
+        }
+    }
+});
