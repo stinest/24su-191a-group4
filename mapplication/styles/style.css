@@ -150,7 +150,7 @@ main {
 #responses {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0rem;
 }
 
@@ -160,7 +160,34 @@ main {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 15px;
     padding: 20px;
+    width: 80%;
+    height: auto;
     box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+#carousel {
+    overflow: hidden;
+    width: 92%;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.controls .arrow {
+    position: absolute;
+    cursor: pointer;
+}
+
+.arrow.left {
+    left: 3rem;
+}
+
+.arrow.right {
+    right: 3rem;
 }
 
 /* navigation */

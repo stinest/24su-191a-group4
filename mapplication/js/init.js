@@ -257,8 +257,22 @@ function makeResponseCards(data) {
         responseCard.appendChild(answerElement);
         hasContent = true; }
     if (hasContent) {
-        document.getElementById('responses').appendChild(responseCard); }
+        document.querySelector('.slider').appendChild(responseCard); }
 }
+
+const slider = document.querySelector('.slider');
+const leftArrow = document.querySelector('.left');
+const rightArrow = document.querySelector('.right');
+var sectionIndex = 0;
+leftArrow.addEventListener('click', function () {
+    sectionIndex = (sectionIndex > 0) ? sectionIndex - 1 : 0;
+    slider.style.transform = 'translate(' + (sectionIndex) * -80 +'%)';
+});
+rightArrow.addEventListener('click', function () {
+    sectionIndex = sectionIndex + 1;
+    slider.style.transform = 'translate(' + (sectionIndex) * -80 +'%)';
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var popup = document.getElementById("popup");
