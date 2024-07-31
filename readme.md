@@ -27,16 +27,12 @@ Data is submitted through an online Google Form embedded in the mapplication and
 By visualizing the Pro-Palestine movement, activists and organizations can identify patterns and locations that hold significance. This can help better plan and coordinate future actions. Additionally, this tool provides valuable data that can be studied to better understand the impact of social and political issues on universities.
 
 ## Meet Our Mapplication!
-![popup](demoimages/popup.png)
-* A welcome popup message introducing the mapplication's purpose and features.
 ![buttons](demoimages/buttons.png)
 * Buttons on the map's right side allow easy navigation to markers organized by location type.
 ![responses](demoimages/responses.png)
 * A carousel displays responses for a deeper understanding of community experiences.
 ![survey](demoimages/survey.png)
 * Participate in the survey directly on the mapplication.
-![gallery](demoimages/gallery.png)
-* Explore a small image gallery to immerse yourself in the movement.
 
 ## Contact Information
 Created by Gia Kim (giaari15@g.ucla.edu) and Justine Lim (justineclim@g.ucla.edu)
